@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Ricerca Stazioni</title>
+    </head>
+    <body>
+        
+        <form><!--onsubmit gestito in script.js-->
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    class="stationInput" 
+                    id="departure" 
+                    placeholder="Stazione di partenza"
+                    required 
+                    autocomplete="off"
+                >
+                <ul id="departureSuggestions" class="suggestions hidden"></ul>
+            </div>
+
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    class="stationInput" 
+                    id="arrival" 
+                    placeholder="Stazione di arrivo"
+                    required 
+                    autocomplete="off"
+                >
+                <ul id="arrivalSuggestions" class="suggestions hidden"></ul>
+            </div>
+
+            <button type="submit">Cerca</button>
+        </form>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="month-nav" id="prevMonth">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <h2 id="currentMonth">Febbraio 2025</h2>
+                <button class="month-nav" id="nextMonth">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Lun</th>
+                        <th>Mar</th>
+                        <th>Mer</th>
+                        <th>Gio</th>
+                        <th>Ven</th>
+                        <th>Sab</th>
+                        <th>Dom</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody"></tbody>
+            </table>
+        </div>
+
+        <script type="module" src="js/script.js"></script>
+    </body>
+</html>
